@@ -1,10 +1,16 @@
 import React from 'react';
-import Shefs from '../Chefs/Chefs';
+import Chefs from '../Chefs/Chefs';
+import TopChefs from '../TopChefs/TopChefs';
 
 export default function Home() {
   return (
     <div>
-      <Shefs />
+      <div className="mb-20">
+        <TopChefs />
+      </div>
+      <div>
+        <Chefs />
+      </div>
     </div>
   );
 }
