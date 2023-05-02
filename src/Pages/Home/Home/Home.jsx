@@ -1,6 +1,7 @@
 import React from 'react';
 import Chefs from '../Chefs/Chefs';
 import TopChefs from '../TopChefs/TopChefs';
+import Reviews from '../Reviews/Reviews';
 
 export default function Home() {
   return (
@@ -10,6 +11,9 @@ export default function Home() {
       </div>
       <div>
         <Chefs />
+      </div>
+      <div>
+        <Reviews />
       </div>
     </div>
   );
