@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 export default function ChefCard({ chef }) {
+  const [fold, setFold] = useState(true);
   const {
+    id,
     picture,
     name,
     place,
@@ -58,16 +61,36 @@ export default function ChefCard({ chef }) {
           <div class="mt-6 py-6 border-t border-slate-200 text-center">
             <div class="flex flex-wrap justify-center">
               <div class="w-full px-4">
-                <p class="font-light leading-relaxed text-slate-600 mb-4">
-                  {bio}
-                </p>
-                <a
-                  href="javascript:;"
-                  class="font-normal text-slate-700 hover:text-slate-400"
-                >
-                  View More Details
-                </a>
+                {fold ? (
+                  <>
+                    <span className=" text-gray-500">
+                      {bio.substring(0, 100)}.....
+                    </span>
+                    <span
+                      className="cursor-pointer text-blue-600 "
+                      onClick={() => setFold(!fold)}
+                    >
+                      Read More
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className=" text-gray-900">{bio}.....</span>
+                    <span
+                      className="cursor-pointer text-blue-600 "
+                      onClick={() => setFold(!fold)}
+                    >
+                      Read Less
+                    </span>
+                  </>
+                )}
               </div>
+              <button
+                href="javascript:;"
+                class="font-normal py-2 px-3 mt-5 rounded-lg text-white bg-gray-600"
+              >
+                <Link to={`/chef/${id}`}>View More Details</Link>
+              </button>
             </div>
           </div>
         </div>
