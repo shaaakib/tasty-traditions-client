@@ -1,5 +1,10 @@
 import React from 'react';
+import Shefs from '../Shefs/Shefs';
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Shefs />
+    </div>
+  );
 }
