@@ -1,5 +1,5 @@
 import React from 'react';
-import Shefs from '../Shefs/Shefs';
+import Shefs from '../Chefs/Chefs';
 
 export default function Home() {
   return (
