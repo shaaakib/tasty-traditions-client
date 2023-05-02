@@ -89,7 +89,7 @@ export default function ChefCard({ chef }) {
                 href="javascript:;"
                 class="font-normal py-2 px-3 mt-5 rounded-lg text-white bg-gray-600"
               >
-                <Link to={`/chef/${id}`}>View More Details</Link>
+                <Link to={`/chefdetails/${id}`}>View More Details</Link>
               </button>
             </div>
           </div>

@@ -3,6 +3,8 @@ import Main from '../Layouts/Main';
 import Home from '../Pages/Home/Home/Home';
 import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';
 import Chefs from '../Pages/Home/Chefs/Chefs';
+import ChefDetails from '../Pages/ChefDetails/ChefDetails';
+import ChefLayout from '../Layouts/ChefLayout';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,18 @@ const router = createBrowserRouter([
       {
         path: '/chef/',
         element: <Chefs />,
+      },
+    ],
+  },
+  {
+    path: 'chefdetails',
+    element: <ChefLayout />,
+    children: [
+      {
+        path: ':id',
+        element: <ChefDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chef/${params.id}`),
       },
     ],
   },
