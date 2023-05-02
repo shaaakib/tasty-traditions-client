@@ -1,5 +1,5 @@
 import React from 'react';
-import banner_1 from '../../../assets/banner_1.png';
+// import banner_1 from '../../../assets/banner_1.png';
 import banner_2 from '../../../assets/banner_2.png';
 
 const Banner = () => {
@@ -27,7 +27,11 @@ const Banner = () => {
           </div>
 
           <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
-            <img className="w-64" src={banner_1} alt="" />
+            <img
+              className="w-64"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Chef_icon.svg"
+              alt=""
+            />
           </div>
         </div>
         <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
