@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import Banner from '../Shared/Banner/Banner';
+// import Banner from '../Shared/Banner/Banner';
 import RecipeCard from '../RecipeCard/RecipeCard';
 
 export default function ChefDetails() {
@@ -78,7 +78,7 @@ export default function ChefDetails() {
           </div>
         </div>
       </section>
-      <div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
         {recipes.map((recipe, index) => (
           <RecipeCard key={index} recipe={recipe} />
         ))}
