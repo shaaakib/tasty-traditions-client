@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default function Register() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPass(!showConfirmPass);
+  };
   return (
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -63,18 +74,45 @@ export default function Register() {
               placeholder="Email"
             />
 
-            <input
-              type="password"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="password"
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="confirm_password"
-              placeholder="Confirm Password"
-            />
+            <div className="relative w-full">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                className="block border border-grey-light w-full p-3 rounded mb-4"
+                name="password"
+                placeholder="Password"
+              />
+              {showPassword ? (
+                <FaEyeSlash
+                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                  onClick={togglePasswordVisibility}
+                />
+              ) : (
+                <FaEye
+                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                  onClick={togglePasswordVisibility}
+                />
+              )}
+            </div>
+
+            <div className="relative w-full">
+              <input
+                type={showConfirmPass ? 'text' : 'password'}
+                className="block border border-grey-light w-full p-3 rounded mb-4"
+                name="confirm_password"
+                placeholder="Confirm Password"
+              />
+              {showConfirmPass ? (
+                <FaEyeSlash
+                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                  onClick={toggleConfirmPasswordVisibility}
+                />
+              ) : (
+                <FaEye
+                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                  onClick={toggleConfirmPasswordVisibility}
+                />
+              )}
+            </div>
 
             <button
               type="submit"

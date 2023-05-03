@@ -117,10 +117,10 @@ export default function Login() {
           <div className="text-grey-dark mt-6">
             Already have an account?
             <Link
-              className="no-underline border-b border-blue text-blue"
-              to="/register/"
+              className="no-underline border-b border-blue text-blue ms-1"
+              to="/register"
             >
-              Log in
+              Register
             </Link>
             .
           </div>
