@@ -15,6 +15,7 @@ export default function ChefDetails() {
     likes,
     recipes,
   } = chefdetails;
+
   return (
     <div>
       <section class="py-8">
@@ -78,10 +79,13 @@ export default function ChefDetails() {
           </div>
         </div>
       </section>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
-        {recipes.map((recipe, index) => (
-          <RecipeCard key={index} recipe={recipe} />
-        ))}
+      <div>
+        <h1 className="text-center text-3xl font-serif">Recipes</h1>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
+          {recipes.map((recipe, index) => (
+            <RecipeCard key={index} recipe={recipe} />
+          ))}
+        </div>
       </div>
     </div>
   );

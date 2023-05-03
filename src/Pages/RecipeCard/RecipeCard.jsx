@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function RecipeCard({ recipe }) {
   const [fold, setFold] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { name, image, ingredients, cookingMethod, rating, favorite } = recipe;
-  console.log(recipe);
+
+  const notify = () => toast('Added to favorite');
+  const handleClick = () => {
+    setIsFavorite(!isFavorite);
+    setDisabled(true);
+    notify();
+  };
 
   return (
     <div>
@@ -53,28 +63,21 @@ export default function RecipeCard({ recipe }) {
             {/* <p>{cookingMethod}</p> */}
           </div>
           <div>
-            <div className="flex items-center justify-between text-gray-800">
+            <div className="flex mt-5 items-center justify-between text-gray-800">
               <p>Rating: {rating}</p>
               <div>
-                <p>Favorite: {favorite ? 'Yes' : 'No'}</p>
+                <button
+                  className="bg-red-500 py-2 px-3 rounded-lg text-white"
+                  disabled={disabled}
+                  onClick={handleClick}
+                >
+                  {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    // <div className="bg-red-500">
-    //   <div className="recipe-card">
-    //     <h2>{name}</h2>
-    //     <ul>
-    //       {ingredients.map((ingredient, index) => (
-    //         <li key={index}>{ingredient}</li>
-    //       ))}
-    //     </ul>
-    //     <p>{cookingMethod}</p>
-    //     <p>Rating: {rating}</p>
-    //     <p>Favorite: {favorite ? 'Yes' : 'No'}</p>
-    //   </div>
-    // </div>
   );
 }
