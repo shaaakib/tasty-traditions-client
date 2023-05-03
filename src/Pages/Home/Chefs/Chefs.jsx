@@ -10,13 +10,14 @@ export default function Chefs() {
       .then((data) => setChef(data))
       .catch((error) => console.log(error));
   }, []);
+
   return (
     <div className="text-center">
       <h2 className="text-3xl font-bold mb-3">Special Chef Menu</h2>
       <p className="text-xl">
         Browse our traditional menus or let us create something new for you.
       </p>
-      <div className="grid md:grid-cols-2 mt-20  lg:grid-cols-3  lg:px-48 md:px-20 gap-y-20 gap-x-8  justify-center ">
+      <div className="grid md:grid-cols-2  lg:grid-cols-2  xl:grid-cols-3 lg:px-48 md:px-20 gap-y-20 gap-x-8  justify-center ">
         {chef.map((chef) => (
           <ChefCard key={chef.id} chef={chef} />
         ))}

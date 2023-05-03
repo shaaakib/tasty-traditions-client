@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const { user } = useContext(AuthContext);
 
   return (
     <nav className="w-full bg-gray-100 shadow">
@@ -107,46 +109,71 @@ export default function NavBar() {
                   Contact US
                 </NavLink>
               </li>
-              <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/">
+              {/* <li className="text-gray-800 hover:text-indigo-200">
+                <Link to="/" title={user.displayName}>
                   <img
                     className="h-10 w-10 rounded-full bg-red-500"
                     src="https://randomuser.me/api/portraits/men/11.jpg"
                     alt=""
                   />
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
-              <Link
-                to="/"
-                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-              >
-                Sign in
-              </Link>
-              <Link
-                to="/"
-                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-              >
-                Sign up
-              </Link>
+              {user ? (
+                <button
+                  to="/"
+                  className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link to="/signin">
+                  <button
+                    to="/"
+                    className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                  >
+                    Sign in
+                  </button>
+                </Link>
+              )}
+              {user && (
+                <img
+                  title={user.displayName}
+                  className="rounded-full w-14"
+                  src="https://randomuser.me/api/portraits/men/11.jpg"
+                  alt=""
+                />
+              )}
             </div>
           </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block ">
-          <a
-            to="/"
-            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-          >
-            Sign in
-          </a>
-          <a
-            to="/"
-            className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-          >
-            Sign up
-          </a>
+
+        <div className="hidden space-x-3  md:flex md:items-center md:justify-center ">
+          {user ? (
+            <button
+              to="/"
+              className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to="/signin">
+              <button className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
+                Sign in
+              </button>
+            </Link>
+          )}
+
+          {user && (
+            <img
+              title={user.displayName}
+              className="rounded-full w-14"
+              src="https://randomuser.me/api/portraits/men/11.jpg"
+              alt=""
+            />
+          )}
         </div>
       </div>
     </nav>
