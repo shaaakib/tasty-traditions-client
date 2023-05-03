@@ -18,46 +18,51 @@ export default function ChefDetails() {
 
   return (
     <div>
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <div class="px-7 py-6 bg-indigo-500 rounded">
-            <div class="flex flex-wrap">
-              <div class="w-full md:w-1/2 pt-6 mb-10 md:mb-0">
-                <h3 class="mb-1 text-2xl font-bold text-white">
+      <section className="py-8">
+        <div className="container px-4 mx-auto">
+          <div className="px-7 py-6 bg-indigo-500 rounded">
+            <div className="flex flex-wrap">
+              <div className="w-full md:w-1/2 pt-6 mb-10 md:mb-0">
+                <h3 className="mb-1 text-2xl font-bold text-white">
                   <span>{name}</span>
                 </h3>
-                <p class="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
+                <p className="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
                   {place}
                 </p>
-                <p class="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
+                <p className="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
                   {bio}
                 </p>
-                <div class="w-full text-center mt-2 mb-8 md:mb-16">
-                  <div class="flex justify-center lg:pt-4 pt-8 pb-0">
-                    <div class="p-3 text-center">
-                      <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                <div className="w-full text-center mt-2 mb-8 md:mb-16">
+                  <div className="flex justify-center lg:pt-4 pt-8 pb-0">
+                    <div className="p-3 text-center">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
                         {yearsOfExperience}
                       </span>
-                      <span class="text-sm text-slate-400">Year Exerience</span>
+                      <span className="text-sm text-slate-400">
+                        Year Exerience
+                      </span>
                     </div>
-                    <div class="p-3 text-center">
-                      <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                    <div className="p-3 text-center">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
                         {numberOfRecipes}
                       </span>
-                      <span class="text-sm text-slate-400">Recipes</span>
+                      <span className="text-sm text-slate-400">Recipes</span>
                     </div>
 
-                    <div class="p-3 text-center">
-                      <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                    <div className="p-3 text-center">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
                         {likes}
                       </span>
-                      <span class="text-sm text-slate-400">Likes</span>
+                      <span className="text-sm text-slate-400">Likes</span>
                     </div>
                   </div>
                 </div>
-                <a class="flex items-center text-white font-medium" href="#">
+                <a
+                  className="flex items-center text-white font-medium"
+                  href="#"
+                >
                   <svg
-                    class="mr-1"
+                    className="mr-1"
                     width="12"
                     height="14"
                     viewbox="0 0 12 14"
@@ -72,8 +77,8 @@ export default function ChefDetails() {
                   <Link to="/">Back Home</Link>
                 </a>
               </div>
-              <div class="w-full md:w-1/2 flex items-center">
-                <img class="mx-auto h-48 rounded-lg" src={picture} alt="" />
+              <div className="w-full md:w-1/2 flex items-center">
+                <img className="mx-auto h-48 rounded-lg" src={picture} alt="" />
               </div>
             </div>
           </div>

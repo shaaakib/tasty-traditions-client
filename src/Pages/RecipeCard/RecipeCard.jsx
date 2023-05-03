@@ -37,7 +37,7 @@ export default function RecipeCard({ recipe }) {
                 ))}
               </ul>
             </p>
-            <div class="w-full px-4 mt-2">
+            <div className="w-full px-4 mt-2">
               <p className="text-xl font-serif mb-1 ">Cooking Method:</p>
               {fold ? (
                 <>

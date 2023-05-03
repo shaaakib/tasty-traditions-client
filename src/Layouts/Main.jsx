@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <div>
       <Header />
-      <Banner />
+
       <div>
         <Outlet />
       </div>

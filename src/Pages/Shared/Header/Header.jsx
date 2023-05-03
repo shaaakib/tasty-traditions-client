@@ -75,7 +75,7 @@ export default function NavBar() {
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <NavLink
-                  to="/chefdetails/blog/"
+                  to="/blog/"
                   aria-label="Blog"
                   title="Blog"
                   className={({ isActive }) =>
@@ -87,7 +87,7 @@ export default function NavBar() {
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <NavLink
-                  to="/chefdetails/about/"
+                  to="/about/"
                   aria-label="About Us"
                   title="About Us"
                   className={({ isActive }) =>
@@ -108,7 +108,7 @@ export default function NavBar() {
                   Logout
                 </button>
               ) : (
-                <Link to="/login">
+                <Link to="/login/">
                   <button
                     to="/"
                     className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
@@ -138,7 +138,7 @@ export default function NavBar() {
               Logout
             </button>
           ) : (
-            <Link to="/login">
+            <Link to="/login/">
               <button className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
                 Login
               </button>
