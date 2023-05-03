@@ -4,7 +4,12 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
 
   return (
     <nav className="w-full bg-gray-100 shadow">
@@ -102,7 +107,7 @@ export default function NavBar() {
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
               {user ? (
                 <button
-                  to="/"
+                  onClick={handleLogOut}
                   className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                 >
                   Logout
@@ -132,7 +137,7 @@ export default function NavBar() {
         <div className="hidden space-x-3  md:flex md:items-center md:justify-center ">
           {user ? (
             <button
-              to="/"
+              onClick={handleLogOut}
               className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
             >
               Logout

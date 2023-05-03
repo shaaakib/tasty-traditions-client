@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log('login page location', location);
+  const from = location.state?.from?.pathname || '/';
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -56,45 +81,43 @@ export default function Login() {
               </button>
             </div>
             <h3 className="text-center mb-4">Or</h3>
-            <input
-              type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="email"
-              placeholder="Email"
-            />
-
-            <div className="relative w-full">
+            <form onSubmit={handleLogin}>
               <input
-                type={showPassword ? 'text' : 'password'}
+                type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4"
-                name="password"
-                placeholder="Password"
+                name="email"
+                placeholder="Email"
+                required
               />
-              {showPassword ? (
-                <FaEyeSlash
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={togglePasswordVisibility}
-                />
-              ) : (
-                <FaEye
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={togglePasswordVisibility}
-                />
-              )}
-            </div>
-            {/* <input
-              type="password"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="confirm_password"
-              placeholder="Confirm Password"
-            /> */}
 
-            <button
-              type="submit"
-              className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-            >
-              Create Account
-            </button>
+              <div className="relative w-full">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  className="block border border-grey-light w-full p-3 rounded mb-4"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                {showPassword ? (
+                  <FaEye
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  />
+                ) : (
+                  <FaEyeSlash
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  />
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="w-full text-center py-3 rounded bg-green-400 text-black hover:bg-green-500 focus:outline-none my-1"
+              >
+                Sign In
+              </button>
+            </form>
 
             <div className="text-center text-sm text-grey-dark mt-4">
               By signing up, you agree to the

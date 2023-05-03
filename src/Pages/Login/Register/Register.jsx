@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import { Result } from 'postcss';
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [error, setError] = useState('');
+  const { createUser, userProfile } = useContext(AuthContext);
+
+  const [accepted, setAccepted] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -13,6 +19,42 @@ export default function Register() {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPass(!showConfirmPass);
   };
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    const confirm_password = form.confirm_password.value;
+    console.log(name, email, photo, password, confirm_password);
+
+    if (password !== confirm_password) {
+      setError('Your password did not match');
+      return;
+    } else if (password.length < 6) {
+      setError('Password must be 6 characters or longer');
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        userProfile(name).then(() => {});
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
+
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
+
   return (
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -60,66 +102,96 @@ export default function Register() {
               </button>
             </div>
             <h3 className="text-center mb-4">Or</h3>
-            <input
-              type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="fullname"
-              placeholder="Full Name"
-            />
-
-            <input
-              type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="email"
-              placeholder="Email"
-            />
-
-            <div className="relative w-full">
+            <form onSubmit={handleRegister}>
               <input
-                type={showPassword ? 'text' : 'password'}
+                type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4"
-                name="password"
-                placeholder="Password"
+                name="name"
+                placeholder="Name"
+                required
               />
-              {showPassword ? (
-                <FaEyeSlash
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={togglePasswordVisibility}
-                />
-              ) : (
-                <FaEye
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={togglePasswordVisibility}
-                />
-              )}
-            </div>
 
-            <div className="relative w-full">
               <input
-                type={showConfirmPass ? 'text' : 'password'}
+                type="email"
                 className="block border border-grey-light w-full p-3 rounded mb-4"
-                name="confirm_password"
-                placeholder="Confirm Password"
+                name="email"
+                placeholder="Email"
+                required
               />
-              {showConfirmPass ? (
-                <FaEyeSlash
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={toggleConfirmPasswordVisibility}
-                />
-              ) : (
-                <FaEye
-                  className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
-                  onClick={toggleConfirmPasswordVisibility}
-                />
-              )}
-            </div>
 
-            <button
-              type="submit"
-              className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-            >
-              Create Account
-            </button>
+              <input
+                type="text"
+                className="block border border-grey-light w-full p-3 rounded mb-4"
+                name="photo"
+                placeholder="Photo URL"
+                required
+              />
+
+              <div className="relative w-full">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  className="block border border-grey-light w-full p-3 rounded mb-4"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                {showPassword ? (
+                  <FaEye
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  />
+                ) : (
+                  <FaEyeSlash
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  />
+                )}
+              </div>
+
+              <div className="relative w-full">
+                <input
+                  type={showConfirmPass ? 'text' : 'password'}
+                  className="block border border-grey-light w-full p-3 rounded mb-4"
+                  name="confirm_password"
+                  placeholder="Confirm Password"
+                  required
+                />
+                {showConfirmPass ? (
+                  <FaEye
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={toggleConfirmPasswordVisibility}
+                  />
+                ) : (
+                  <FaEyeSlash
+                    className="h-6 w-6 absolute top-2.5 right-3 text-gray-500 cursor-pointer"
+                    onClick={toggleConfirmPasswordVisibility}
+                  />
+                )}
+              </div>
+              <p className="text-red-600 mb-3">{error}</p>
+              <div className="flex items-center py-2 ">
+                <input
+                  onClick={handleAccepted}
+                  id="default-checkbox"
+                  type="checkbox"
+                  value=""
+                  className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="default-checkbox"
+                  className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Accept Terms and Condition
+                </label>
+              </div>
+              <button
+                type="submit"
+                disabled={!accepted}
+                className="w-full text-center py-3 rounded bg-green-400 font-serif text-lg text-black hover:bg-green-500 focus:outline-none my-1"
+              >
+                Create Account
+              </button>
+            </form>
 
             <div className="text-center text-sm text-grey-dark mt-4">
               By signing up, you agree to the

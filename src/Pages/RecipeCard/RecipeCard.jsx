@@ -31,7 +31,7 @@ export default function RecipeCard({ recipe }) {
             </h4>
             <p className="text-gray-800 dark:text-gray-100 text-sm">
               <p className="text-xl font-serif ">Ingredient:</p>
-              <ul className="text-[18px] font-medium mt-2">
+              <ul className="text-[18px] font-medium mt-2 list-disc pl-5">
                 {ingredients.map((ingredient, index) => (
                   <li key={index}>{ingredient}</li>
                 ))}
