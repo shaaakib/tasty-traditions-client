@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -60,16 +60,52 @@ export default function NavBar() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/">Home</Link>
+                <NavLink
+                  to="/"
+                  aria-label="Home"
+                  title="Home"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/">Blog</Link>
+                <NavLink
+                  to="/blog"
+                  aria-label="Blog"
+                  title="Blog"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                >
+                  Blog
+                </NavLink>
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/">About US</Link>
+                <NavLink
+                  to="/about"
+                  aria-label="About Us"
+                  title="About Us"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                >
+                  About US
+                </NavLink>
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/">Contact US</Link>
+                <NavLink
+                  to="/contact"
+                  aria-label="Contact US"
+                  title="Contact US"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                >
+                  Contact US
+                </NavLink>
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <Link to="/">

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating';
+
+import '@smastrom/react-rating/style.css';
 
 export default function RecipeCard({ recipe }) {
   const [fold, setFold] = useState(true);
@@ -64,7 +67,11 @@ export default function RecipeCard({ recipe }) {
           </div>
           <div>
             <div className="flex mt-5 items-center justify-between text-gray-800">
-              <p>Rating: {rating}</p>
+              <div className="flex gap-2 items-center">
+                <Rating style={{ maxWidth: 130 }} value={4.5} readOnly />{' '}
+                {rating}
+              </div>
+
               <div>
                 <button
                   className="bg-red-500 py-2 px-3 rounded-lg text-white"
