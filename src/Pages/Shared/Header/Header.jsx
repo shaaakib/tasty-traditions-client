@@ -75,7 +75,7 @@ export default function NavBar() {
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <NavLink
-                  to="/blog"
+                  to="/chefdetails/blog/"
                   aria-label="Blog"
                   title="Blog"
                   className={({ isActive }) =>
@@ -87,7 +87,7 @@ export default function NavBar() {
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <NavLink
-                  to="/about"
+                  to="/chefdetails/about/"
                   aria-label="About Us"
                   title="About Us"
                   className={({ isActive }) =>
@@ -97,27 +97,6 @@ export default function NavBar() {
                   About US
                 </NavLink>
               </li>
-              <li className="text-gray-800 hover:text-indigo-200">
-                <NavLink
-                  to="/contact"
-                  aria-label="Contact US"
-                  title="Contact US"
-                  className={({ isActive }) =>
-                    isActive ? 'active' : 'default'
-                  }
-                >
-                  Contact US
-                </NavLink>
-              </li>
-              {/* <li className="text-gray-800 hover:text-indigo-200">
-                <Link to="/" title={user.displayName}>
-                  <img
-                    className="h-10 w-10 rounded-full bg-red-500"
-                    src="https://randomuser.me/api/portraits/men/11.jpg"
-                    alt=""
-                  />
-                </Link>
-              </li> */}
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
@@ -129,12 +108,12 @@ export default function NavBar() {
                   Logout
                 </button>
               ) : (
-                <Link to="/signin">
+                <Link to="/login">
                   <button
                     to="/"
                     className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                   >
-                    Sign in
+                    Login
                   </button>
                 </Link>
               )}
@@ -159,9 +138,9 @@ export default function NavBar() {
               Logout
             </button>
           ) : (
-            <Link to="/signin">
+            <Link to="/login">
               <button className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
-                Sign in
+                Login
               </button>
             </Link>
           )}

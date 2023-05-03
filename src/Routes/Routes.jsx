@@ -5,6 +5,8 @@ import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';
 import Chefs from '../Pages/Home/Chefs/Chefs';
 import ChefDetails from '../Pages/ChefDetails/ChefDetails';
 import ChefLayout from '../Layouts/ChefLayout';
+import Blog from '../Pages/blog/blog';
+import About from '../Pages/About/About';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
         element: <ChefDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chef/${params.id}`),
+      },
+      {
+        path: '/chefdetails/blog/',
+        element: <Blog />,
+      },
+      {
+        path: '/chefdetails/about/',
+        element: <About />,
       },
     ],
   },
