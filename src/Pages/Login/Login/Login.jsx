@@ -5,7 +5,8 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log('login page location', location);
@@ -33,6 +34,23 @@ export default function Login() {
         console.log(error);
       });
   };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => console.log(error));
+  };
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -47,6 +65,7 @@ export default function Login() {
             </h2>
             <div className="flex items-center justify-center mb-3">
               <button
+                onClick={handleGitHubSignIn}
                 type="button"
                 className="bg-gray-100 py-2 px-10 rounded-md"
               >
@@ -65,6 +84,7 @@ export default function Login() {
                 </svg>
               </button>
               <button
+                onClick={handleGoogleSignIn}
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
