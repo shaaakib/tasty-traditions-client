@@ -1,5 +1,3 @@
-## Describe this site
-
 ### website Live link: https://tasty-traditions.web.app/
 
 ## Let's describe something about this site
