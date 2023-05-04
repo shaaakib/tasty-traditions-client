@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import tilte_icons from '../../../assets/fork.png';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -17,9 +18,12 @@ export default function NavBar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <h2 className="text-2xl font-bold text-gray-800">
-                Tasty Traditions
-              </h2>
+              <div className="flex items-center gap-5">
+                <img className="w-10" src={tilte_icons} alt="" />
+                <h2 className="text-2xl font-bold text-gray-800">
+                  Tasty Traditions
+                </h2>
+              </div>
             </Link>
             <div className="md:hidden">
               <button
@@ -108,27 +112,32 @@ export default function NavBar() {
               {user ? (
                 <button
                   onClick={handleLogOut}
-                  className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                  class="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5"
                 >
                   Logout
+                  <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                 </button>
               ) : (
                 <Link to="/login/">
-                  <button
-                    to="/"
-                    className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                  >
+                  <button class="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5">
                     Login
+                    <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                   </button>
                 </Link>
               )}
               {user && (
-                <img
-                  title={user.displayName}
-                  className="rounded-full w-14"
-                  src="https://randomuser.me/api/portraits/men/11.jpg"
-                  alt=""
-                />
+                <div>
+                  {user.photoURL ? (
+                    <img
+                      className="w-14 rounded-full"
+                      title={user.displayName}
+                      src={user.photoURL}
+                      alt="Profile"
+                    />
+                  ) : (
+                    ''
+                  )}
+                </div>
               )}
             </div>
           </div>
@@ -138,25 +147,33 @@ export default function NavBar() {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+              className="group px-4 py-2 mb-5 group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5 "
             >
               Logout
+              <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
             </button>
           ) : (
             <Link to="/login/">
-              <button className="px-4 mt-4 py-2 mb-5 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
+              <button className="px-4  py-2 mb-5 e bg-orange-500  shadow group rounded-2xl h-12 w-32  font-bold text-lg text-white relative overflow-hidden mt-5 ">
                 Login
+                <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
               </button>
             </Link>
           )}
 
           {user && (
-            <img
-              title={user.displayName}
-              className="rounded-full w-14"
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              alt=""
-            />
+            <div>
+              {user.photoURL ? (
+                <img
+                  className="w-14 rounded-full"
+                  title={user.displayName}
+                  src={user.photoURL}
+                  alt="Profile"
+                />
+              ) : (
+                ''
+              )}
+            </div>
           )}
         </div>
       </div>

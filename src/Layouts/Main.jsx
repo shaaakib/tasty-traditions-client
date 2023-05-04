@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function Main() {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100">
       <Header />
 
       <div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaThumbsUp } from 'react-icons/fa';
 export default function ChefCard({ chef }) {
   const [fold, setFold] = useState(true);
   const {
@@ -14,7 +15,7 @@ export default function ChefCard({ chef }) {
   } = chef;
   return (
     <div>
-      <div className="relative max-w-md mx-auto md:max-w-2xl mt-6 min-w-0 break-words bg-white w-full h-full mb-6 shadow-lg rounded-xl ">
+      <div className="relative max-w-md mx-auto md:max-w-2xl mt-6 min-w-0 break-words bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100 w-full h-full mb-6 shadow-lg rounded-xl ">
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
             <div className="w-full flex justify-center">
@@ -28,23 +29,29 @@ export default function ChefCard({ chef }) {
             <div className="w-full text-center mt-20">
               <div className="flex justify-center lg:pt-4 pt-8 pb-0">
                 <div className="p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                  <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
                     {yearsOfExperience}
                   </span>
-                  <span className="text-sm text-slate-400">Year Exerience</span>
+                  <span className="text-xl font-serif text-slate-400">
+                    Year Exerience
+                  </span>
                 </div>
                 <div className="p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                  <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
                     {numberOfRecipes}
                   </span>
-                  <span className="text-sm text-slate-400">Recipes</span>
+                  <span className="text-xl font-serif text-slate-400">
+                    Recipes
+                  </span>
                 </div>
 
                 <div className="p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
-                    {likes}
+                  <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
+                    {likes}K
                   </span>
-                  <span className="text-sm text-slate-400">Likes</span>
+                  <span className="text-xl font-serif text-slate-400">
+                    <FaThumbsUp className="w-10 h-6" />
+                  </span>
                 </div>
               </div>
             </div>
@@ -85,9 +92,12 @@ export default function ChefCard({ chef }) {
                   </>
                 )}
               </div>
-              <button className="font-normal py-2 px-3 mt-5 rounded-lg text-white bg-gray-600">
-                <Link to={`/chefdetails/${id}`}>View More Details</Link>
-              </button>
+              <Link to={`/chefdetails/${id}`}>
+                <button className="group rounded-2xl h-12 w-48 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5">
+                  View More Details
+                  <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

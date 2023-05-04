@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 // import Banner from '../Shared/Banner/Banner';
 import RecipeCard from '../RecipeCard/RecipeCard';
+import { FaThumbsUp } from 'react-icons/fa';
 
 export default function ChefDetails() {
   const chefdetails = useLoaderData();
@@ -20,49 +21,51 @@ export default function ChefDetails() {
     <div>
       <section className="py-8">
         <div className="container px-4 mx-auto">
-          <div className="px-7 py-6 bg-indigo-500 rounded">
+          <div className="px-7 py-6 bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100 rounded">
             <div className="flex flex-wrap">
               <div className="w-full md:w-1/2 pt-6 mb-10 md:mb-0">
-                <h3 className="mb-1 text-2xl font-bold text-white">
+                <h3 className="mb-1 text-2xl font-extralight font-serif text-gray-800">
                   <span>{name}</span>
                 </h3>
-                <p className="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
+                <p className="mb-2 md:mb-2 text-lg  font-mono text-gray-800">
                   {place}
                 </p>
-                <p className="mb-2 md:mb-2 text-sm font-medium text-indigo-100">
-                  {bio}
-                </p>
+                <p className="mb-2 md:mb-2  font-medium text-gray-800">{bio}</p>
                 <div className="w-full text-center mt-2 mb-8 md:mb-16">
                   <div className="flex justify-center lg:pt-4 pt-8 pb-0">
                     <div className="p-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                      <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
                         {yearsOfExperience}
                       </span>
-                      <span className="text-sm text-slate-400">
+                      <span className="text-xl font-serif text-slate-400">
                         Year Exerience
                       </span>
                     </div>
                     <div className="p-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
+                      <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
                         {numberOfRecipes}
                       </span>
-                      <span className="text-sm text-slate-400">Recipes</span>
+                      <span className="text-xl font-serif text-slate-400">
+                        Recipes
+                      </span>
                     </div>
 
                     <div className="p-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
-                        {likes}
+                      <span className="text-2xl font-bold block uppercase tracking-wide text-slate-700">
+                        {likes}K
                       </span>
-                      <span className="text-sm text-slate-400">Likes</span>
+                      <span className="text-xl font-serif text-slate-400">
+                        <FaThumbsUp className="w-10 h-6" />
+                      </span>
                     </div>
                   </div>
                 </div>
                 <a
-                  className="flex items-center text-white font-medium"
+                  className="flex items-center text-gray-800 font-medium"
                   href="#"
                 >
                   <svg
-                    className="mr-1"
+                    className="mr-1 text-gray-800"
                     width="12"
                     height="14"
                     viewBox="0 0 12 14"
@@ -86,7 +89,7 @@ export default function ChefDetails() {
       </section>
       <div>
         <h1 className="text-center text-3xl font-serif">Recipes</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:cols-2 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
           {recipes.map((recipe, index) => (
             <RecipeCard key={index} recipe={recipe} />
           ))}

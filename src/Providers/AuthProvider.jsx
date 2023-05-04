@@ -32,15 +32,20 @@ export default function AuthProvider({ children }) {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const userProfile = (name) => {
+  const userProfile = (name, photo) => {
     setLoading(true);
-    return updateProfile(auth.currentUser, { displayName: name });
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
   };
 
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleAuthProvider);
   };
   const signInWithGitHub = () => {
+    setLoading(true);
     return signInWithPopup(auth, gitHubAuthProvider);
   };
 
@@ -68,9 +73,9 @@ export default function AuthProvider({ children }) {
     createUser,
     signInWithGoogle,
     signInWithGitHub,
+    userProfile,
     signIn,
     logOut,
-    userProfile,
   };
 
   return (

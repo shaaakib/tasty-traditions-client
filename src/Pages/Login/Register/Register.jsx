@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
-import { Result } from 'postcss';
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [error, setError] = useState('');
-  const { createUser, userProfile } = useContext(AuthContext);
+  const { createUser, userProfile, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
 
   const [accepted, setAccepted] = useState(false);
 
@@ -43,12 +43,30 @@ export default function Register() {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-        userProfile(name).then(() => {});
+        userProfile(name, photo).then(() => {});
       })
       .catch((error) => {
         console.log(error);
         setError(error.message);
       });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => console.log(error));
   };
 
   const handleAccepted = (event) => {
@@ -67,6 +85,7 @@ export default function Register() {
             </h2>
             <div className="flex items-center justify-center mb-3">
               <button
+                onClick={handleGitHubSignIn}
                 type="button"
                 className="bg-gray-100 py-2 px-10 rounded-md"
               >
@@ -85,6 +104,7 @@ export default function Register() {
                 </svg>
               </button>
               <button
+                onClick={handleGoogleSignIn}
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
