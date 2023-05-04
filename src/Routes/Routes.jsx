@@ -55,7 +55,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chef/${params.id}`),
+          fetch(
+            `https://tasty-traditions-server-shakibhossainmuhammad.vercel.app/chef/${params.id}`
+          ),
       },
     ],
   },

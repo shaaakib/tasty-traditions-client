@@ -5,7 +5,9 @@ import ChefCard from '../ChefCard/ChefCard';
 export default function Chefs() {
   const [chef, setChef] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/chef`)
+    fetch(
+      `https://tasty-traditions-server-shakibhossainmuhammad.vercel.app/chef`
+    )
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((error) => console.log(error));
