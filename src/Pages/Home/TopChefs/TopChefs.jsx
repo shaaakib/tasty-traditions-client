@@ -39,7 +39,7 @@ export default function TopChefs() {
           </svg>
           <div className="relative flex items-center justify-center px-10 pt-10">
             <div className="absolute bottom-0 left-0 block w-48 h-48 ml-3 -mb-24"></div>
-            <LazyLoad>
+            <LazyLoad height={250}>
               <img
                 src="https://static.javatpoint.com/top10-technologies/images/top-10-chefs-in-india1.jpg"
                 alt=""
