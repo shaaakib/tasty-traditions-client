@@ -6,6 +6,7 @@ import tilte_icons from '../../../assets/fork.png';
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+
   const handleLogOut = () => {
     logOut()
       .then()

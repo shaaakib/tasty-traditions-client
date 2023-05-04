@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [error, setError] = useState('');
-  const { createUser, userProfile, signInWithGoogle, signInWithGitHub } =
+  const { createUser, signInWithGoogle, signInWithGitHub, auth, setLoading } =
     useContext(AuthContext);
 
   const [accepted, setAccepted] = useState(false);
@@ -19,6 +20,15 @@ export default function Register() {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPass(!showConfirmPass);
   };
+
+  // const photoURL =
+  //   user.photoURL || 'https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg';
+
+  // if (user.photoURL) {
+  //   // use the user's photo URL
+  // } else {
+  //   // use a default photo or display a placeholder
+  // }
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -42,9 +52,26 @@ export default function Register() {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        setLoading(true);
+
         console.log(createdUser);
+
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            setUser(result.user);
+            setLoading(false);
+          })
+          .catch((error) => {
+            setError(error.code);
+          })
+          .catch((error) => {
+            console.log(error);
+            setError(error);
+          });
         form.reset();
-        userProfile(name, photo).then(() => {});
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +84,6 @@ export default function Register() {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        userProfile(photo).then(() => {});
       })
       .catch((error) => console.log(error));
   };
@@ -67,7 +93,6 @@ export default function Register() {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        userProfile(photo).then(() => {});
       })
       .catch((error) => console.log(error));
   };

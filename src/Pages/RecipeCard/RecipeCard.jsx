@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from '@smastrom/react-rating';
-
 import '@smastrom/react-rating/style.css';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-
 export default function RecipeCard({ recipe }) {
   const [fold, setFold] = useState(true);
   const [disabled, setDisabled] = useState(false);
