@@ -5,11 +5,11 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { signIn, signInWithGoogle, signInWithGitHub } =
+  const [error, setError] = useState('');
+  const { user, signIn, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('login page location', location);
   const from = location.state?.from?.pathname || '/';
 
   const togglePasswordVisibility = () => {
@@ -24,10 +24,15 @@ export default function Login() {
     const password = form.password.value;
     console.log(email, password);
 
+    if (!user) {
+      setError('Please Enter a valid account!');
+    }
+
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        form.reset();
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -133,7 +138,7 @@ export default function Login() {
                   />
                 )}
               </div>
-
+              <p className="text-red-500">{error}</p>
               <button
                 type="submit"
                 className="w-full text-center py-3 rounded bg-green-400 text-black hover:bg-green-500 focus:outline-none my-1"

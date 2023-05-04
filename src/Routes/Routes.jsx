@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layouts/Main';
 import Home from '../Pages/Home/Home/Home';
 import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';

@@ -43,6 +43,7 @@ export default function Register() {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        form.reset();
         userProfile(name, photo).then(() => {});
       })
       .catch((error) => {
@@ -56,6 +57,7 @@ export default function Register() {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        userProfile(photo).then(() => {});
       })
       .catch((error) => console.log(error));
   };
@@ -65,6 +67,7 @@ export default function Register() {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        userProfile(photo).then(() => {});
       })
       .catch((error) => console.log(error));
   };
