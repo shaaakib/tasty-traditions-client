@@ -121,13 +121,13 @@ const Footer = () => {
           </p>
         </div>
         <div className="mt-10 lg:block hidden">
-          <label className="text-xl font-medium leading-5 text-gray-100">
+          <label className="text-xl font-medium leading-5 text-gray-900">
             Get updates
           </label>
           <div className="cursor-pointer flex items-center justify-between border border-gray-800 mt-4">
             <input
               type="text"
-              className="text-base leading-4 p-4 w-full focus:outline-none text-gray-100 placeholder-gray-800"
+              className="text-base leading-4 p-4 w-full focus:outline-none text-gray-900 placeholder-gray-800"
               placeholder="Enter your email"
             />
             <svg
@@ -147,16 +147,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-10 lg:hidden">
-        <label className="text-xl font-medium leading-5 text-gray-100">
+        <label className="text-xl font-medium leading-5 text-gray-900">
           Get updates
         </label>
         <div className="flex items-center justify-between border border-gray-800 mt-4">
           <input
             type="text"
-            className="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-100 placeholder-gray-800"
+            className="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800"
             placeholder="Enter your email"
           />
-          <div className="cursor-pointer mr-4 cursor-pointer relative z-40">
+          <div className="cursor-pointer mr-4  relative z-40">
             <svg
               className="fill-current text-gray-100 hover:text-gray-500"
               width="16"
