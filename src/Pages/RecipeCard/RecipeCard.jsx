@@ -4,12 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from '@smastrom/react-rating';
 
 import '@smastrom/react-rating/style.css';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export default function RecipeCard({ recipe }) {
   const [fold, setFold] = useState(true);
   const [disabled, setDisabled] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const { name, image, ingredients, cookingMethod, rating, favorite } = recipe;
+  const { name, image, ingredients, cookingMethod, rating } = recipe;
 
   const notify = () => toast('Added to favorite');
   const handleClick = () => {
@@ -74,11 +75,15 @@ export default function RecipeCard({ recipe }) {
 
               <div>
                 <button
-                  className="bg-red-500 py-2 px-3 rounded-lg text-white"
+                  className="bg-gray-900 py-2 px-3 rounded-lg text-white"
                   disabled={disabled}
                   onClick={handleClick}
                 >
-                  {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+                  {isFavorite ? (
+                    <FaHeart className="text-red-500" />
+                  ) : (
+                    <FaRegHeart />
+                  )}
                 </button>
               </div>
             </div>
