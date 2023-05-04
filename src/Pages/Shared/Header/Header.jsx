@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import tilte_icons from '../../../assets/fork.png';
 
-export default function NavBar() {
+export default function Header() {
   const [navbar, setNavbar] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
@@ -84,7 +84,7 @@ export default function NavBar() {
               </li>
               <li className="text-gray-800 hover:text-indigo-200">
                 <NavLink
-                  to="/blog/"
+                  to="/Blog/"
                   aria-label="Blog"
                   title="Blog"
                   className={({ isActive }) =>
@@ -112,16 +112,16 @@ export default function NavBar() {
               {user ? (
                 <button
                   onClick={handleLogOut}
-                  class="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5"
+                  className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5"
                 >
                   Logout
-                  <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+                  <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                 </button>
               ) : (
                 <Link to="/login/">
-                  <button class="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5">
+                  <button className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5">
                     Login
-                    <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+                    <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                   </button>
                 </Link>
               )}
@@ -150,13 +150,13 @@ export default function NavBar() {
               className="group px-4 py-2 mb-5 group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5 "
             >
               Logout
-              <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+              <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
             </button>
           ) : (
             <Link to="/login/">
               <button className="px-4  py-2 mb-5 e bg-orange-500  shadow group rounded-2xl h-12 w-32  font-bold text-lg text-white relative overflow-hidden mt-5 ">
                 Login
-                <div class="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
+                <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
               </button>
             </Link>
           )}

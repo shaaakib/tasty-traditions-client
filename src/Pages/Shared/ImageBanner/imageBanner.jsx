@@ -1,7 +1,7 @@
 import React from 'react';
 // import backgroundImg from '../../../assets/img-3.jpg';
 
-export default function imageBanner() {
+export default function ImageBanner() {
   return (
     <div>
       <header>

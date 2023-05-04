@@ -64,7 +64,6 @@ export default function RecipeCard({ recipe }) {
                 </>
               )}
             </div>
-            {/* <p>{cookingMethod}</p> */}
           </div>
           <div>
             <div className="flex mt-5 items-center justify-between text-gray-800">
@@ -75,14 +74,14 @@ export default function RecipeCard({ recipe }) {
 
               <div>
                 <button
-                  className="bg-gray-900 py-2 px-3 rounded-lg text-white"
+                  className="bg-gray-500 py-2 px-3 rounded-lg text-white"
                   disabled={disabled}
                   onClick={handleClick}
                 >
                   {isFavorite ? (
-                    <FaHeart className="text-red-500" />
+                    <FaHeart className="text-red-500 w-6 h-6" />
                   ) : (
-                    <FaRegHeart />
+                    <FaRegHeart className="w-6 h-6" />
                   )}
                 </button>
               </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 
 export default function TopChefs() {
   return (
@@ -38,10 +39,12 @@ export default function TopChefs() {
           </svg>
           <div className="relative flex items-center justify-center px-10 pt-10">
             <div className="absolute bottom-0 left-0 block w-48 h-48 ml-3 -mb-24"></div>
-            <img
-              src="https://static.javatpoint.com/top10-technologies/images/top-10-chefs-in-india1.jpg"
-              alt=""
-            />
+            <LazyLoad>
+              <img
+                src="https://static.javatpoint.com/top10-technologies/images/top-10-chefs-in-india1.jpg"
+                alt=""
+              />
+            </LazyLoad>
           </div>
           <div className="relative px-6 pb-6 mt-6 text-white">
             <span className="block -mb-1 opacity-75">Senior Chef</span>

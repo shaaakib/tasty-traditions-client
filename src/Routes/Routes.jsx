@@ -5,7 +5,7 @@ import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';
 import Chefs from '../Pages/Home/Chefs/Chefs';
 import ChefDetails from '../Pages/ChefDetails/ChefDetails';
 import ChefLayout from '../Layouts/ChefLayout';
-import Blog from '../Pages/blog/blog';
+import Blog from '../Pages/Blog/Blog';
 import About from '../Pages/About/About';
 import Login from '../Pages/Login/Login/Login';
 import Register from '../Pages/Login/Register/Register';
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: '/blog/',
+        path: '/Blog/',
         element: <Blog />,
       },
       {

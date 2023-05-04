@@ -3,7 +3,7 @@ import Chefs from '../Chefs/Chefs';
 import TopChefs from '../TopChefs/TopChefs';
 import Reviews from '../Reviews/Reviews';
 import Banner from '../../Shared/Banner/Banner';
-import ImageBanner from '../../Shared/ImageBanner/imageBanner';
+import ImageBanner from '../../Shared/ImageBanner/ImageBanner';
 
 export default function Home() {
   return (

@@ -21,7 +21,7 @@ export default function ChefDetails() {
     <div>
       <section className="py-8">
         <div className="container px-4 mx-auto">
-          <div className="px-7 py-6 bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100 rounded">
+          <div className="px-7 py-6 bg-gradient-to-r from-yellow-100 via-orange-200 to-green-100 rounded">
             <div className="flex flex-wrap">
               <div className="w-full md:w-1/2 pt-6 mb-10 md:mb-0">
                 <h3 className="mb-1 text-2xl font-extralight font-serif text-gray-800">

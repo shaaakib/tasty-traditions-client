@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyBj8DV7YHklnwNu9KWgCUi9lq_rFq-gDrY',
-  authDomain: 'tasty-traditions.firebaseapp.com',
-  projectId: 'tasty-traditions',
-  storageBucket: 'tasty-traditions.appspot.com',
-  messagingSenderId: '181373495902',
-  appId: '1:181373495902:web:f4bcfe4b583705bdc862cf',
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

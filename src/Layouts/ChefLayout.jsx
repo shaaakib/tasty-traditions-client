@@ -5,12 +5,12 @@ import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Main() {
+export default function ChefLayout() {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100">
       <Header />
 
-      <div className="">
+      <div>
         <Outlet />
         <ToastContainer />
       </div>
