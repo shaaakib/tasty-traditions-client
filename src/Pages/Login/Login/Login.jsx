@@ -27,6 +27,7 @@ export default function Login() {
     if (!user) {
       setError('Please Enter a valid account!');
     }
+    setError('');
 
     signIn(email, password)
       .then((result) => {
