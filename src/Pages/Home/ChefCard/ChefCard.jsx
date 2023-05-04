@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaThumbsUp } from 'react-icons/fa';
+
 export default function ChefCard({ chef }) {
   const [fold, setFold] = useState(true);
   const {

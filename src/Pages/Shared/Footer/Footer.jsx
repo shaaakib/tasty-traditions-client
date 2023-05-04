@@ -121,7 +121,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="mt-10 lg:block hidden">
-          <label className="text-xl font-medium leading-5 text-gray-900">
+          <label className="text-xl font-medium leading-5 text-white">
             Get updates
           </label>
           <div className="cursor-pointer flex items-center justify-between border border-gray-800 mt-4">
@@ -147,7 +147,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-10 lg:hidden">
-        <label className="text-xl font-medium leading-5 text-gray-900">
+        <label className="text-xl font-medium leading-5 text-white">
           Get updates
         </label>
         <div className="flex items-center justify-between border border-gray-800 mt-4">
