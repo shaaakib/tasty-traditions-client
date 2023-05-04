@@ -173,7 +173,6 @@ export default function Login() {
             >
               Register
             </Link>
-            .
           </div>
         </div>
       </div>
