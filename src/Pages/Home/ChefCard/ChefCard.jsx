@@ -20,8 +20,8 @@ export default function ChefCard({ chef }) {
 
         <div className="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
           <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-            <img className="w-44 rounded-full" src={picture} alt="" />
-            <h2 className="mt-4 text-2xl font-serif sm:text-4xl">{name}</h2>
+            <img className="w-32 h-32 rounded-full" src={picture} alt="" />
+            <h2 className="mt-4 text-xl font-serif sm:text-2xl">{name}</h2>
 
             <div className="flex items-center gap-4">
               <h2 className="mt-4 text-xl font-medium sm:text-2xl">{place}</h2>
@@ -38,17 +38,19 @@ export default function ChefCard({ chef }) {
           </div>
 
           <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
-            <h3 className="mt-4 text-xl font-medium sm:text-3xl">
+            <h3 className="mt-4 text-xl font-medium sm:text-2xl">
               Years Experience: {yearsOfExperience} years
             </h3>
-            <h3 className="mt-4 text-xl font-medium sm:text-3xl">
+            <h3 className="mt-4 text-xl font-medium sm:text-2xl">
               Recipes: {numberOfRecipes}
             </h3>
 
             <p className="mt-4 text-sm sm:text-xl"> {bio.substring(0, 200)}</p>
 
             <Link to={`/chefdetails/${id}`}>
-              <button className="mt-8 font-bold">View Recipe</button>
+              <button className="mt-8 font-bold hover:text-white hover:bg-orange-400 py-2 px-2 rounded-lg">
+                View Recipe
+              </button>
             </Link>
           </div>
         </div>
