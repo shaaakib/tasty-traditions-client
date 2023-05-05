@@ -9,10 +9,10 @@ const Footer = lazy(() => import('../Pages/Shared/Footer/Footer'));
 export default function Main() {
   return (
     <Suspense fallback={<Loading />}>
-      <div className="bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100">
+      <div className="">
         <Header />
 
-        <div className="md:min-h-[calc(100vh-341px)]">
+        <div className="md:min-h-[calc(100vh-30px)]">
           <Outlet />
         </div>
         <Footer />

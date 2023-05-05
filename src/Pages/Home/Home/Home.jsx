@@ -11,7 +11,7 @@ const Reviews = lazy(() => import('../Reviews/Reviews'));
 export default function Home() {
   return (
     <Suspense fallback={<Loading />}>
-      <div className="bg-gradient-to-r from-yellow-100 via-orange-100 to-green-100">
+      <div className="">
         <ImageBanner />
         <Banner />
         <div className="mb-20">
