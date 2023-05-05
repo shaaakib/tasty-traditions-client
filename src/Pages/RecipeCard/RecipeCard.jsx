@@ -5,6 +5,7 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 export default function RecipeCard({ recipe }) {
   const [disabled, setDisabled] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -21,15 +22,16 @@ export default function RecipeCard({ recipe }) {
   return (
     <div>
       <Link
-        href="#"
+        to="#"
         class="group relative block bg-black h-[25rem] lg:h-[28rem] "
       >
-        <img
-          alt="Developer"
-          src={image}
-          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
+        <LazyLoad>
+          <img
+            alt="Developer"
+            src={image}
+            class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+          />
+        </LazyLoad>
         <div class="relative p-4 sm:p-6 lg:p-8">
           <p class="text-xl font-bold text-white sm:text-2xl">{name}</p>
 
