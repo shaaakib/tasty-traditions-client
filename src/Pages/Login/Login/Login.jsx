@@ -64,7 +64,7 @@ export default function Login() {
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-          <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+          <div className="bg-white px-6 py-8 rounded shadow-md text-black w-[30rem]">
             <h1 className="mb-8 text-3xl text-center">
               Sign in to your account
             </h1>
@@ -164,16 +164,15 @@ export default function Login() {
                 Privacy Policy
               </a>
             </div>
-          </div>
-
-          <div className="text-grey-dark mt-6">
-            Already have an account?
-            <Link
-              className="no-underline border-b border-blue text-blue ms-1"
-              to="/register"
-            >
-              Register
-            </Link>
+            <div className="text-grey-dark mt-6">
+              Already have an account?
+              <Link
+                className="no-underline border-b border-blue text-blue ms-1"
+                to="/register"
+              >
+                Register
+              </Link>
+            </div>
           </div>
         </div>
       </div>

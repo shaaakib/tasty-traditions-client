@@ -105,7 +105,7 @@ export default function Register() {
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col ">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-          <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+          <div className="bg-white px-6 py-8 rounded shadow-md text-black w-[30rem]">
             <h1 className="mb-8 text-3xl text-center">Sign up</h1>
             <h2 className="text-center mb-3">
               Sign Up to access your files, communicate with colleagues and view

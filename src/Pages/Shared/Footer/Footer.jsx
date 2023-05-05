@@ -6,14 +6,14 @@ const Footer = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
         <div className="flex flex-col flex-shrink-0">
           <div>
-            <p className="text-2xl text-gray-100 font-semibold">
+            <p className="text-3xl text-gray-100 font-semibold">
               Tasty Traditions
             </p>
           </div>
-          <p className="text-sm leading-none text-gray-100 mt-4">
+          <p className="text-xl leading-none text-gray-100 mt-4">
             Copyright © 2023 Tasty Traditions
           </p>
-          <p className="text-sm leading-none text-gray-100 mt-4">
+          <p className="text-xl leading-none text-gray-100 mt-4">
             All rights reserved
           </p>
           <div className="flex items-center gap-x-4 mt-12">
@@ -84,50 +84,50 @@ const Footer = () => {
           </div>
         </div>
         <div className="sm:ml-0 ml-8">
-          <h2 className="text-base font-semibold leading-4 text-gray-100">
+          <h2 className="text-2xl font-semibold leading-4 text-gray-100">
             Company
           </h2>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Blog
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Pricing
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             About Us
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Contact us
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Testimonials
           </p>
         </div>
         <div>
-          <h2 className="text-base font-semibold leading-4 text-gray-100">
+          <h2 className="text-2xl font-semibold leading-4 text-gray-100">
             Support
           </h2>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Legal policy
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Status policy
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Privacy policy
           </p>
-          <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100 cursor-pointer">
+          <p className="hover:text-gray-500 text-xl leading-4 mt-6 text-gray-100 cursor-pointer">
             Terms of service
           </p>
         </div>
         <div className="mt-10 lg:block hidden">
-          <label className="text-xl font-medium leading-5 text-white">
+          <label className="text-2xl font-medium leading-5 text-white">
             Get updates
           </label>
           <div className="cursor-pointer flex items-center justify-between border border-gray-800 mt-4">
             <input
               type="text"
-              className="text-base leading-4 p-4 w-full focus:outline-none text-gray-900 placeholder-gray-800"
+              className="text-xl leading-4 p-4 w-full focus:outline-none text-gray-900 placeholder-gray-800"
               placeholder="Enter your email"
             />
             <svg
@@ -147,13 +147,13 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-10 lg:hidden">
-        <label className="text-xl font-medium leading-5 text-white">
+        <label className="text-2xl font-medium leading-5 text-white">
           Get updates
         </label>
         <div className="flex items-center justify-between border border-gray-800 mt-4">
           <input
             type="text"
-            className="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800"
+            className="text-xl leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800"
             placeholder="Enter your email"
           />
           <div className="cursor-pointer mr-4  relative z-40">

@@ -36,14 +36,14 @@ export default function RecipeCard({ recipe }) {
           <div class="mt-20 sm:mt-14 lg:mt-24">
             <div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
               <p className="text-white dark:text-gray-100 text-sm mb-3">
-                <p className="text-xl font-serif ">Ingredient:</p>
+                <p className="text-2xl font-serif ">Ingredient:</p>
                 <ul className="text-[18px] font-medium mt-2 list-disc pl-5">
                   {ingredients.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
                   ))}
                 </ul>
               </p>
-              <p class="text-sm text-white">{cookingMethod}</p>
+              <p class="text-xl text-white">{cookingMethod}</p>
 
               <div className="flex mt-5 items-center justify-between text-gray-800">
                 <div className="flex gap-2 items-center">

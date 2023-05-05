@@ -11,7 +11,7 @@ const Reviews = lazy(() => import('../Reviews/Reviews'));
 export default function Home() {
   return (
     <Suspense fallback={<Loading />}>
-      <div className="">
+      <div className=" ">
         <ImageBanner />
         <Banner />
         <div className="mb-20">
