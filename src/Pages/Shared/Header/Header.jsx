@@ -15,13 +15,13 @@ export default function Header() {
 
   return (
     <nav className="w-full bg-gray-100 shadow">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <div className="justify-between px-8 mx-auto lg:max-w-7xl md:items-center md:flex ">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
               <div className="flex items-center gap-5">
                 <img className="w-10" src={tilte_icons} alt="" />
-                <h2 className="text-2xl font-bold text-gray-800">
+                <h2 className="text-4xl font-bold text-gray-800">
                   Tasty Traditions
                 </h2>
               </div>
@@ -113,14 +113,14 @@ export default function Header() {
               {user ? (
                 <button
                   onClick={handleLogOut}
-                  className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5"
+                  className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-2xl text-white relative overflow-hidden mt-5"
                 >
                   Logout
                   <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                 </button>
               ) : (
                 <Link to="/login/">
-                  <button className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5">
+                  <button className="group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-2xl text-white relative overflow-hidden mt-5">
                     Login
                     <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
                   </button>
@@ -148,14 +148,14 @@ export default function Header() {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="group px-4 py-2 mb-5 group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-lg text-white relative overflow-hidden mt-5 "
+              className="group px-4 py-2 mb-5 group rounded-2xl h-12 w-32 bg-orange-500 font-bold text-2xl text-white relative overflow-hidden mt-5 "
             >
               Logout
               <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
             </button>
           ) : (
             <Link to="/login/">
-              <button className="px-4  py-2 mb-5 e bg-orange-500  shadow group rounded-2xl h-12 w-32  font-bold text-lg text-white relative overflow-hidden mt-5 ">
+              <button className="px-4  py-2 mb-5  bg-orange-500  shadow group rounded-2xl h-12 w-32  font-bold text-2xl text-white relative overflow-hidden mt-5 ">
                 Login
                 <div className="absolute duration-300 inset-0 w-full h-full transition-all scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-2xl"></div>
               </button>

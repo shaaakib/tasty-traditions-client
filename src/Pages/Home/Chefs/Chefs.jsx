@@ -16,8 +16,8 @@ export default function Chefs() {
   return (
     <div>
       <div className="text-center mb-24">
-        <h2 className="text-3xl font-bold mb-3">Special Chef Menu</h2>
-        <p className="text-xl">
+        <h2 className="text-5xl font-bold mb-3">Special Chef Menu</h2>
+        <p className="text-3xl">
           Browse our traditional menus or let us create something new for you.
         </p>
       </div>

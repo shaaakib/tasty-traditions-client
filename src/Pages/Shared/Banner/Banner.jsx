@@ -14,14 +14,6 @@ const Banner = () => {
               Be the fastest in delivering your healthy food and with us order
               your best food anytime and anywhere
             </p>
-            <div className="flex gap-3 mt-3">
-              <button className="py-2 px-3 text-white text-xl font-serif rounded-lg bg-gray-700">
-                Get started
-              </button>
-              <button className="py-2 px-3 text-gray-800 text-xl font-serif rounded-lg bg-white">
-                Order process
-              </button>
-            </div>
           </div>
 
           <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">

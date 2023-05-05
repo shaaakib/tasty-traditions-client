@@ -89,7 +89,7 @@ export default function ChefDetails() {
       </section>
       <div>
         <h1 className="text-center text-3xl font-serif">Recipes</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:cols-2 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
+        <div className="grid md:grid-cols-2  lg:grid-cols-2  xl:grid-cols-3 md:px-20 lg:px-48 mt-10 gap-x-5 gap-y-14">
           {recipes.map((recipe, index) => (
             <RecipeCard key={index} recipe={recipe} />
           ))}
