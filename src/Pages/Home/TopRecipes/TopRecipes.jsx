@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
-import './TopChefs.css';
+import './TopRecipes.css';
 
-export default function TopChefs() {
+export default function TopRecipes() {
   return (
     <div>
       <div className="my-container ">

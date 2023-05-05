@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaPrint } from 'react-icons/fa';
 import Pdf from 'react-to-pdf';
-// import '../Home/TopChefs/TopChefs.css';
+// import '../Home/TopRecipes/TopRecipes.css';
 
 const ref = React.createRef();
 
