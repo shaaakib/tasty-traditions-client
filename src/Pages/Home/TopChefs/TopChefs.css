@@ -14,25 +14,25 @@
 }
 
 html {
-  font-size: 80%;
+  font-size: 75%;
   scroll-behavior: smooth;
 }
 
 /* @media (min-width: 640px) {
   html {
-    zoom: 1.5;
+    zoom: 0.1;
   }
 }
 
 @media (min-width: 768px) {
   html {
-    zoom: 1.7;
+    zoom: 0.1;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    zoom: 2.5;
+    zoom: 0.8;
   }
 } */
 

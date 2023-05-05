@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-// import Banner from '../Shared/Banner/Banner';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { FaThumbsUp } from 'react-icons/fa';
 

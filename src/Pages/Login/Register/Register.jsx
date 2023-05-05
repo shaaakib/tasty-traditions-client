@@ -49,10 +49,6 @@ export default function Register() {
 
     createUser(email, password)
       .then((result) => {
-        // const createdUser = result.user;
-        // setLoading(true);
-
-        // console.log(createdUser);
         logOut();
         navigate('/login');
 

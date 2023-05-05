@@ -5,11 +5,14 @@ import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';
 import Chefs from '../Pages/Home/Chefs/Chefs';
 import ChefDetails from '../Pages/ChefDetails/ChefDetails';
 import ChefLayout from '../Layouts/ChefLayout';
-import Blog from '../Pages/Blog/Blog';
-import About from '../Pages/About/About';
 import Login from '../Pages/Login/Login/Login';
 import Register from '../Pages/Login/Register/Register';
 import PrivateRoute from './PrivateRoute';
+import { lazy } from 'react';
+import Loading from '../Pages/Loading/Loading';
+import { Suspense } from 'react';
+const Blog = lazy(() => import('../Pages/Blog/Blog'));
+const About = lazy(() => import('../Pages/About/About'));
 
 const router = createBrowserRouter([
   {
@@ -31,11 +34,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/Blog/',
-        element: <Blog />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Blog />
+          </Suspense>
+        ),
       },
       {
         path: '/about/',
-        element: <About />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: '/register',
